@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Nesko Aanmelden</name>
+    <author>Bart Oevering</author>
+    <version>0.0.1</version>
+    <description>Module voor aanmelden auditie.</description>
+    <files>
+        <filename>mod_aanmelden.xml</filename>
+        <filename module="mod_aanmelden">mod_aanmelden.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+		<filename>sql/mysql/install.mysql.utf8.sql</filename>
+		<filename>sql/mysql/uninstall.mysql.utf8.sql</filename>
+    </files>
+    <config>
+    </config>
+</extension>
+
+
+<install>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+     </sql>
+</install>
+ 
+<uninstall>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+     </sql>
+</uninstall>
+ 
+<update> 
+    <schemas>
+        <schemapath type="mysql">sql/mysql/updates</schemapath> 
+    </schemas> 
+</update>
